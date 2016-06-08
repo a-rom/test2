@@ -1,5 +1,7 @@
 language: generic
 script:
   - bash ./16745123.bash 100 10 = 10
+  - bash ./16745123.bash 12 42 = 6
+  - bash ./16745123.bash 255 360 = 15
  
 
