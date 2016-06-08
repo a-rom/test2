@@ -19,7 +19,7 @@ $tmp-ans2 -eq $tmp-out2 || exit 1
 #########
 
 echo 25 > $tmp-ans3
-bash ./16745123.bash  325 2002 > $tmp-out3 || exit 1
+bash ./16745123.bash  325 200 > $tmp-out3 || exit 1
 $tmp-ans3 -eq $tmp-out3 || exit 1
 
 exit 0
