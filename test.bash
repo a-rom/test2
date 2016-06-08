@@ -14,8 +14,12 @@ echo 6 > $tmp-ans2
 bash ./16745123.bash  12 42 > $tmp-out2 || exit 1
 $tmp-ans2 -eq $tmp-out2 || exit 1
 
-echo 15 > $tmp-ans3
-bash ./16745123.bash  12 42 > $tmp-out3 || exit 1
+#########
+# TEST3 #
+#########
+
+echo 25 > $tmp-ans3
+bash ./16745123.bash  325 2002 > $tmp-out3 || exit 1
 $tmp-ans3 -eq $tmp-out3 || exit 1
 
 exit 0
