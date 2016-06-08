@@ -1,5 +1,5 @@
 language: generic
 script:
-  - bash -e ./16745123.bash 100 10 = 10
+  - bash ./16745123.bash 100 10 = 10
  
 
