@@ -1,26 +1,35 @@
 #!/bin/bash
 
+tmp=/tmp/$$
+
+ERROR_EXIT () {
+    rm -f $tmp-*
+    exit 1
+}
+
 #########
 # TEST1 #
 #########
-echo 10 > $tmpans1
-bash ./16745123.bash  100 10 > $tmpout1 || exit 1
-$tmpans1 == $tmpout1 || exit 1
+echo 10 > $tmp-ans1
+bash ./16745123.bash  100 10 > $tmp-out1 || ERROR_EXIT "TEST1-1"
+diff $tmp-ans1 $tmp-out1 || ERROR_EXIT "TEST1-2"
 
-#########
+##########
 # TEST2 #
-#########
-echo 6 > $tmpans2
-bash ./16745123.bash  12 42 > $tmpout2 || exit 1
-$tmpans2 == $tmpout2 || exit 1
+##########
+echo 6 > $tmp-ans2
+bash ./16745123.bash  12 42 > $tmp-out2 || ERROR_EXIT "TEST2-1"
+diff $tmp-ans2 $tmp-out2 || ERROR_EXIT "TEST2-2"
 
 #########
 # TEST3 #
 #########
 
-echo 25 > $tmpans3
-bash ./16745123.bash  325 200 > $tmpout3 || exit 1
-$tmpans3 == $tmpout3 || exit 1
+echo 25 > $tmp-ans3
+bash ./16745123.bash  325 200 > $tmp-out3 || ERROR_EXIT "TEST3-1"
+diff $tmp-ans3  $tmp-out3 || ERROR_EXIT "TEST3-2"
 
+rm -f $tmp-*
 exit 0
 
+                                                   33,1         末尾
